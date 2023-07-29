@@ -39,28 +39,7 @@
     <h1 class="animate-slide-in-down">ஐდஐ   Welcome   ஐდஐ</h1>
     <h1 class="animate-slide-in-down">杨宇翔和王早莉</h1>
     <h1 class="animate-slide-in-down">  快乐小窝  </h1>
-    <div id="timer"></div>
-      <script>
-      // 获取显示计时器的元素
-        var timerElement = document.getElementById("timer");
-      // 定义开始时间和当前时间
-        var startTime = new Date("2023-05-25");
-        var currentTime = new Date();
-        // 计算时间差
-        var timeDiff = currentTime.getTime() - startTime.getTime();
-        // 计算天数、小时数、分钟数和秒数
-        var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        // 将计时器显示在网页上
-        timerElement.textContent = "今天是我们相遇的 " + days + " 天 " ;
-        // 设置定时器，每秒更新一次计时器
-        setInterval(function() {
-        currentTime = new Date();
-        timeDiff = currentTime.getTime() - startTime.getTime();
-        days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        timerElement.textContent = "今天是我们相遇的 " + days + " 天 " ;
-        }, 1000);
-      </script>
-    </div>
+    
     <div class="quote">
       <span class="quote-line quote-line-start animate-slide-in-left"></span>
       <span class="quote-icon quote-icon-start animate-slide-in-down">
@@ -86,6 +65,27 @@
     <div class="relocating">
       Navigating to: <span class="relocate-location"></span>...
     </div>
+    <div id="timer"></div>
+      <script>
+      // 获取显示计时器的元素
+        var timerElement = document.getElementById("timer");
+      // 定义开始时间和当前时间
+        var startTime = new Date("2023-05-25");
+        var currentTime = new Date();
+        // 计算时间差
+        var timeDiff = currentTime.getTime() - startTime.getTime();
+        // 计算天数、小时数、分钟数和秒数
+        var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        // 将计时器显示在网页上
+        timerElement.textContent = "今天是我们相遇的 " + days + " 天 " ;
+        // 设置定时器，每秒更新一次计时器
+        setInterval(function() {
+        currentTime = new Date();
+        timeDiff = currentTime.getTime() - startTime.getTime();
+        days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        timerElement.textContent = "今天是我们相遇的 " + days + " 天 " ;
+        }, 1000);
+      </script>
   </div>
 
   <script src="assets/vendors/jquery-3.3.1.min.js"></script>
