@@ -12,14 +12,14 @@
   <style>
 			body{
 				display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-size: 24px;
-      font-family: Arial, sans-serif;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-size: 26px;
+        font-family: Arial, sans-serif;
+        opacity: 0;
+        animation: fadeIn 3s ease-in-out forwards;
 			}
     @keyframes fadeIn {
       0% {
@@ -38,23 +38,22 @@
   <div id="randomText"></div>
 
   <script>
-    // 创建一个包含多个文本数据的数组
-    var texts = [
-      "死生契阔，与子成说。执子之手，与子偕老。——《诗经邶风击鼓》",
-      "有美人兮，见之不忘，一日不见兮，思之如狂。——《凤求凰》",
-      "今夕何夕，见此良人。——《诗经唐风绸缪》",
-      "只愿君心似我心，定不负相思意。－李之仪《卜算子》",
-      "换我心，为你心，始知相忆深。－顾敻《诉衷情》"
-    ];
-
-    // 生成一个随机的索引值
-    var randomIndex = Math.floor(Math.random() * texts.length);
-
-    // 获取显示文本数据的元素
-    var randomTextElement = document.getElementById("randomText");
-
-    // 将随机文本数据显示在网页上
-    randomTextElement.textContent = texts[randomIndex];
+    // 读取本地的文档内容
+    fetch('love.txt')
+      .then(response => response.text())
+      .then(data => {
+        // 将文档内容按行分割为数组
+        var lines = data.split('\n');
+        // 生成一个随机的索引值
+        var randomIndex = Math.floor(Math.random() * lines.length);
+        // 获取显示文字的元素
+        var randomTextElement = document.getElementById("randomText");
+        // 将随机文字显示在网页上
+        randomTextElement.textContent = lines[randomIndex];
+      })
+      .catch(error => {
+        console.error('读取文档时发生错误:', error);
+      });
   </script>
 </body>
   
