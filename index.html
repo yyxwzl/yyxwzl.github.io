@@ -17,6 +17,31 @@
 </head>
 <body background="821.jpg" >
 </body>
+  
+<body>
+  <div id="randomText"></div>
+
+  <script>
+    // 创建一个包含多个文本数据的数组
+    var texts = [
+      "这是第一段文本数据。",
+      "这是第二段文本数据。",
+      "这是第三段文本数据。",
+      "这是第四段文本数据。",
+      "这是第五段文本数据。"
+    ];
+
+    // 生成一个随机的索引值
+    var randomIndex = Math.floor(Math.random() * texts.length);
+
+    // 获取显示文本数据的元素
+    var randomTextElement = document.getElementById("randomText");
+
+    // 将随机文本数据显示在网页上
+    randomTextElement.textContent = texts[randomIndex];
+  </script>
+</body>
+  
 <body>
   <div class="YYXWZL">
     <h1 class="animate-slide-in-down">ஐდஐ   Welcome   ஐდஐ</h1>
