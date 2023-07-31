@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>图片轮播</title>
+  <style>
+      body {
+      font-family: Arial, sans-serif;
+      background: url(image1.jpg) no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #imageContainer {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .image {
+      max-width: 50%;
+      max-height: 50%;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: center center;
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="imageContainer"></div>
+
+  <script>
+    // 指定图片文件路径数组
+    var imagePaths = [
+      'C:/Users/Administrator/Desktop/image1.jpg',
+      'C:/Users/Administrator/Desktop/image2.jpg',
+      'C:/Users/Administrator/Desktop/image3.jpg',
+      'C:/Users/Administrator/Desktop/image4.jpg',
+      'C:/Users/Administrator/Desktop/image5.jpg',
+      'C:/Users/Administrator/Desktop/image6.jpg',
+    ];
+
+    var imageContainer = document.getElementById('imageContainer');
+    var index = 0;
+
+    // 显示图片
+    function showImage() {
+      var imageUrl = imagePaths[index];
+
+      var image = document.createElement('img');
+      image.src = imageUrl;
+      image.classList.add('image');
+      image.style.transform = 'rotate(' + getRandomRotation() + 'deg)';
+      image.style.top = getRandomPosition(imageContainer.clientHeight - image.clientHeight) + 'px';
+      image.style.left = getRandomPosition(imageContainer.clientWidth - image.clientWidth) + 'px';
+      imageContainer.appendChild(image);
+
+      setTimeout(function() {
+        image.style.opacity = 1;
+      }, 100);
+
+      index = (index + 1) % imagePaths.length;
+    }
+
+    // 生成随机旋转角度
+    function getRandomRotation() {
+      return Math.random() * 20 - 10;
+    }
+
+    // 生成随机位置
+    function getRandomPosition(max) {
+      return Math.random() * max;
+    }
+
+    // 每隔3秒切换图片
+    setInterval(showImage, 800);
+  </script>
+</body>
+</html>
