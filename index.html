@@ -29,9 +29,14 @@
         opacity: 1;
       }
     }
-    .container {
+    .container1 {
       display: flex;
-      justify-content: center;
+      justify-content: start;
+      padding: 5px;
+    }
+    .container2 {
+      display: flex;
+      justify-content: flex-end;
       padding: 5px;
     }
   </style>
@@ -96,8 +101,11 @@
         timerElement.textContent = "我们已相遇 " + days + " 天 " + hours + " 小时 "+ minutes + " 分钟 " + seconds + " 秒";
         }, 1000);
       </script>
-      <div class="container">
-      <a href="picture.html" target="_self">♡</a>
+      <div class="container1">
+      <a href="picture.html" target="_self">相簿</a>
+      </div>
+      <div class="container2">
+      <a href="story.html" target="_self">故事</a>
       </div>
   </div>
 
