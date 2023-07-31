@@ -61,7 +61,7 @@
       var currentDate = new Date();
       var fileName = "note_" + currentDate.getTime() + ".txt";
       var fileContent = encodeURIComponent(noteContent);
-      var githubRepo = "https://api.github.com/repos/yyxwzl/yyxwzlbook.github.io/contents/notebook/" + riji.txt;
+      var githubRepo = "https://api.github.com/repos/yyxwzl/yyxwzlbook.github.io/contents/notebook/" + riji;
 
       var xhr = new XMLHttpRequest();
       xhr.open("PUT", githubRepo);
