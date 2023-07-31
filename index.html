@@ -77,15 +77,19 @@
         // 计算天数、小时数、分钟数和秒数
         var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
         // 将计时器显示在网页上
-        timerElement.textContent = "我们已相遇 " + days + " 天 " + hours + " 小时 ";
+        timerElement.textContent = "我们已相遇 " + days + " 天 " + hours + " 小时 "+ minutes + " 分钟 " + seconds + " 秒";
         // 设置定时器，每秒更新一次计时器
         setInterval(function() {
         currentTime = new Date();
         timeDiff = currentTime.getTime() - startTime.getTime();
         days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        timerElement.textContent = "我们已相遇 " + days + " 天 " + hours + " 小时 ";
+        minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+        timerElement.textContent = "我们已相遇 " + days + " 天 " + hours + " 小时 "+ minutes + " 分钟 " + seconds + " 秒";
         }, 1000);
       </script>
   </div>
