@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fading Text with Frosted Glass Effect</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('C:/Users/Administrator/Desktop/821.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+
+  .container {
+    position: relative;
+    max-width: 80%;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .frosted-glass {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="frosted-glass">2023年5月26日 我们于茫茫人海中第一次相遇</div>
+  <div class="frosted-glass" style="animation-delay: 4s;">2023年7月13日 我们第一次去爬山，晚霞映红了你的脸颊</div>
+  <div class="frosted-glass" style="animation-delay: 8s;">2023年7月16日 我们第一次看电影，一起去了操场，仿佛回到大学一样</div>
+  <div class="frosted-glass" style="animation-delay: 12s;">2023年7月30日 我们第一次画油画，那个笑得天真烂漫的女孩像极了你</div>
+  <div class="frosted-glass" style="animation-delay: 16s;">我们正式在一起啦！我说：我喜欢你，她说：我喜欢你喜欢我，我们未来可期！</div>
+</div>
+</body>
+</html>
